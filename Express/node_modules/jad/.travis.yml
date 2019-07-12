@@ -1,0 +1,18 @@
+os:
+    - linux
+language:
+    - node_js
+node_js:
+    - "node"
+cache:
+    yarn : true
+    directories:
+        - node_modules
+        - $HOME/.m2
+script:
+    - ./node_modules/.bin/eslint .
+    - yarn test
+after_script:
+    - rm -r test
+notifications:
+    email: false
